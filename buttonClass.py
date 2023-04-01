@@ -13,6 +13,8 @@ class Button:
         self.rect = self.surf.get_rect(center=pos)
         self.clickStage = None
 
+        self.held = False
+
         if txt_properties is not None:
             self.txtProperties = txt_properties
             if selector_button:
@@ -44,11 +46,14 @@ class Button:
             self.clickStage = 0
             self.surf.fill((255, 0, 0))
             if pygame.mouse.get_pressed()[0]:
-                self.clickStage = 1
+                self.held = True
                 self.surf.fill((0, 255, 0))
+            if self.held and not pygame.mouse.get_pressed()[0]:
+                self.clickStage = 1
 
         else:
-            self.clickStage = None
+            self.clickStage = False
+            self.held = False
             self.surf.fill((0, 0, 255))
 
     def update(self, draw_surf):

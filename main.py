@@ -2,7 +2,9 @@ from sys import exit
 from buttonClass import Button
 from tileClass import Tile
 from windowClass import Window
-import pygame, math, time
+import pygame
+import time
+import math
 
 
 class App:
@@ -30,7 +32,6 @@ class App:
             subWindow = Window((WIDTH/2, HEIGHT/2), 500, 500)
 
 
-
 if __name__ == '__main__':
     app = App()
 
@@ -51,7 +52,7 @@ if __name__ == '__main__':
     }
     tileMapButton = Button((100, 75), 100, 100, (255, 0, 126), tileMapButton, True)
 
-    size = 50
+    size = 100
     gridColor = (0, 200, 150)
     tileMap = Tile.tile_map(200, 200, 400, 400, size, size, (255, 255, 255))
     subWindow = None
