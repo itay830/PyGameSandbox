@@ -14,6 +14,7 @@ class Button:
         self.clickStage = None
 
         if txt_properties is not None:
+            self.txtProperties = txt_properties
             if selector_button:
                 txt_properties['pos'] = (self.rect.centerx, self.rect.centery + 75)
             self.txtSurf, self.txtRect = create_txt(txt_properties.get('font'), txt_properties.get('size', 0),
